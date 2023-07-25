@@ -3,7 +3,7 @@
   <title>PCDO LUX FR</title>
 </head>
 <body>
-<!-- Embedded Service <-> LWC Wrapper -->
+ <!-- Embedded Service <-> LWC Wrapper -->
       <script>
           window.addEventListener("message", function(event) {
               var payload = event.data;
@@ -17,14 +17,14 @@
 
 <!-- Embedded Service ChatBot Styles -->
       <style type='text/css'>
-        @import url('https://psa-customerfirst--preprod--c.sandbox.vf.force.com/resource/1670933538000/SnY_slds_mod_min_css/slds.min.css');
+        @import url('https://psa-customerfirst--hotfix1--c.sandbox.vf.force.com/resource/1671057967000/SnY_slds_mod_min_css/slds.min.css');
         .embeddedServiceHelpButton .helpButton .uiButton {
-          background-color: transparent !important;
+          background-color: #005290;
           font-family: "Arial", sans-serif;
         }
 
         .embeddedServiceHelpButton .helpButton .uiButton {
-          /* background-color: #5820D5 !important;  */
+          /* background-color: transparent !important;  */
           font-family: "Salesforce Sans", sans-serif !important;
         }
 
@@ -53,33 +53,33 @@
         }
 
        button.sidebarHeader.minimizedContainer.embeddedServiceSidebarMinimizedDefaultUI {
-		 background-image: url('https://www.alfaromeo.at/content/dam/omnichannel-aem/cross/livechat/headset_icon_chatbot_peugeot') !important;
-		 background-position: center;
-		 background-size: 70px;
-		 background-repeat: no-repeat !important;
-		 background-color: transparent !important;
-		 height: 70px !important;
-		 width: 70px !important;
-		 border-radius: 50% !important;
-		 min-height: 60px !important;
-		 min-width: 60px !important;
-		 margin: 30px;
-		 border-style: none;
-		 box-shadow: none !important;
- }
+			 background-image: url('https://www.alfaromeo.lu/content/dam/omnichannel-aem/cross/livechat/headset_icon_chatbot_alfaromeo.png')!important;
+			 background-position: center;
+			 background-size: 70px;
+			 background-repeat: no-repeat !important;
+            background-color: transparent !important;
+			 height: 70px !important;
+			 width: 70px !important;
+			 border-radius: 50% !important;
+			 min-height: 60px !important;
+			 min-width: 60px !important;
+			 margin: 30px;
+			 border-style: none;
+			 box-shadow: none !important;
+			 }
 
         .embeddedServiceHelpButton .helpButton .uiButton{
-	    background-image: url('https://www.alfaromeo.at/content/dam/omnichannel-aem/cross/livechat/headset_icon_chatbot_peugeot') !important;
-	    background-position: center;
-	    background-color: transparent !important;
-	    background-size: 50px;
-	    background-repeat: no-repeat !important;
-	    width: 40px !important;
-	    height: 40px !important;
-	    border-radius: 50% !important;
-	    min-height: 60px !important;
-	    min-width: 60px !important;
-	    box-shadow: none !important;
+			background-image: url('https://www.alfaromeo.lu/content/dam/omnichannel-aem/cross/livechat/headset_icon_chatbot_alfaromeo.png') !important;
+			background-position: center;
+			background-color: transparent !important;
+			background-size: 50px;
+			background-repeat: no-repeat !important;
+			width: 40px !important;
+			height: 40px !important;
+			border-radius: 50% !important;
+			min-height: 60px !important;
+			min-width: 60px !important;
+			box-shadow: none !important;
 
         }
 
@@ -109,7 +109,7 @@
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
-		embedded_svc.settings.language = 'de'; //For example, enter 'en' or 'en-US'
+		embedded_svc.settings.language = 'fr'; //For example, enter 'en' or 'en-US'
 
 		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
 		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
@@ -130,34 +130,35 @@
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 
 		embedded_svc.init(
-			'https://psa-customerfirst--preprod.sandbox.my.salesforce.com',
-			'https://psa-customerfirst--preprod.sandbox.my.site.com/PSADealer',
+			'https://psa-customerfirst--hotfix1.sandbox.my.salesforce.com',
+			'https://psa-customerfirst--hotfix1.sandbox.my.site.com/PSADealer',
 			gslbBaseURL,
-			'00D5t0000004fHO',
-			'Chat_eShop_at_ar',
+			'00D9E000000A6K7',
+			'Chat_eShop_lu_ar',
 			{
-				baseLiveAgentContentURL: 'https://c.la3-c1cs-fra.salesforceliveagent.com/content',
-				deploymentId: '5725t00000002hL',
-				buttonId: '5735t00000000EU',
-				baseLiveAgentURL: 'https://d.la3-c1cs-fra.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I5t00000000JqEAI_18954a221f8',
+				baseLiveAgentContentURL: 'https://c.la2-c1cs-fra.salesforceliveagent.com/content',
+				deploymentId: '5729E0000004DHD',
+				buttonId: '5739E0000004I1H',
+				baseLiveAgentURL: 'https://d.la2-c1cs-fra.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I0D0000004CdxUAE_188e37d789b',
 				isOfflineSupportEnabled: false
 			}
 		);
- };
+	};
 
 
+  
 
-		 if (!window.embedded_svc) {
+	 if (!window.embedded_svc) {
 			 var s = document.createElement('script');
-			 s.setAttribute('src', 'https://psa-customerfirst--preprod.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		    s.setAttribute('src', 'https://psa-customerfirst--hotfix1.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js'); 
 			 s.onload = function() {
 			 initESW(null);
 			 };
 			 document.body.appendChild(s);
-		 } else {
+	 } else {
 			 initESW('https://service.force.com');
-		 }
+	 }
 </script>
 </body>
 </html>
