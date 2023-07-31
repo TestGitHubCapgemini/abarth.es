@@ -3,7 +3,7 @@
   <title>PCDO LUX FR</title>
 </head>
 <body>
-<script type='text/javascript' src='https://service.force.com/embeddedservice/menu/fab.min.js'></script>
+<!--<script type='text/javascript' src='https://service.force.com/embeddedservice/menu/fab.min.js'></script>
 <style>
 .embedded-service .fab div[class="icon_fab_container"] > img.esw-custom_icon{
 width : 100% !important;
@@ -90,6 +90,71 @@ if (!window.embedded_svc || !window.embedded_svc.menu) {
 } else {
     initESW('https://service.force.com');
 }
+</script>-->
+	<script type="text/javascript">
+    
+    /* Create a map of market and language combination */
+    var marketLanguageMap = new Object();
+    marketLanguageMap["UKen_GB"] = "2216";
+    marketLanguageMap["Italyit"] = "2297";
+    marketLanguageMap["Francefr"] = "2300";
+    marketLanguageMap["Luxembourgfr"] = "2300";
+    marketLanguageMap["Belgiumfr"] = "2300";
+    marketLanguageMap["Germanyde"] = "2298";
+    marketLanguageMap["Austriade"] = "2298";
+    marketLanguageMap["Spaines"] = "2299";
+    marketLanguageMap["Switzerlandfr"] = "2300";
+    marketLanguageMap["Switzerlandit"] = "2297";
+    marketLanguageMap["Switzerlandde"] = "2298";
+    marketLanguageMap["Netherlandsen_GB"] = "2302";
+    marketLanguageMap["Denmarken_GB"] = "2303";
+    marketLanguageMap["Greeceen_GB"] = "2304";
+    marketLanguageMap["Norwayen_GB"] = "2305";
+    marketLanguageMap["Polanden_GB"] = "2306";
+    marketLanguageMap["Portugalen_GB"] = "2307";
+    marketLanguageMap["Swedenen_GB"] = "2308";
+    marketLanguageMap["Czech Republicen_GB"] = "2309";
+    marketLanguageMap["Hungaryen_GB"] = "2310";
+    marketLanguageMap["Slovaken_GB"] = "2311";
+    marketLanguageMap["Bulgariaen_GB"] = "2216";
+    marketLanguageMap["Croatiaen_GB"] = "2216";
+    marketLanguageMap["Cyprusen_GB"] = "2216";
+    marketLanguageMap["Estoniaen_GB"] = "2216";
+    marketLanguageMap["Irelanden_GB"] = "2216";
+    marketLanguageMap["Latviaen_GB"] = "2216";
+    marketLanguageMap["Lithuaniaen_GB"] = "2216";
+    marketLanguageMap["Belgiumen_GB"] = "2216";
+    marketLanguageMap["Maltaen_GB"] = "2216";
+    marketLanguageMap["Romaniaen_GB"] = "2216";
+    marketLanguageMap["Sloveniaen_GB"] = "2976";
+    marketLanguageMap["Finlanden_GB"] = "2989";
+    
+    /* Get URL parameters. */
+    const params = new URLSearchParams(window.location.search);  
+	const language = params.get("language");  
+    const market = params.get("market"); 
+    //const test = params.get("test");
+    
+    /* Check if URL parameters are not null
+    This is done so cookie policy dialog is not shown on home page */    
+    if(language != null && market != null){
+       // && test != null
+        var marketLangugeInURL = market + language;
+        generateCookiePolicyHeader(marketLangugeInURL);
+        
+    }
+    
+    function generateCookiePolicyHeader(marketLanguageKey){
+        if(marketLanguageKey != null && marketLanguageKey != undefined){
+            var head= document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = "https://cookielaw.emea.fcagroup.com/CookieLawProduct/resources/generatejs?key=" + marketLanguageMap[marketLanguageKey]; 
+            head.appendChild(script);
+            var styleSheetDynamic = '<link rel="stylesheet" type="text/css" href="https://cookielaw.emea.fcagroup.com/CookieLawProduct/resources/generatecss?key=' + marketLanguageMap[marketLanguageKey]  + '"/>';
+            document.write(styleSheetDynamic);
+        }
+    }        
 </script>
 </body>
 </html>
